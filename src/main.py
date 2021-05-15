@@ -3,7 +3,7 @@ import ssl
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from src.endpoints import request_item
+from src.endpoints import request_item, hospital, item
 from src.utils.common_logger import logger
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -20,6 +20,8 @@ async def validation_exception_handler(request, err):
 
 # Add endpoints
 app.include_router(request_item.router)
+app.include_router(hospital.router)
+app.include_router(item.router)
 
 app.add_middleware(
     CORSMiddleware,

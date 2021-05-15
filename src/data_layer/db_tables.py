@@ -5,6 +5,7 @@ from sqlalchemy import (
     Column,
     Float,
     ForeignKey,
+    Integer,
     String,
     PrimaryKeyConstraint,
     DateTime,
@@ -63,6 +64,7 @@ class Item(BaseTable):
     )
     name = Column(String(200))
     hospital_id = Column(UUID, ForeignKey("locaid.hospital.id", name="FK_item_hospital_id_hospital_id"))
+    quantities = Column(Integer)
     expiry_date = Column(UUID)
     PrimaryKeyConstraint(id, name="PK_item_id")
 
