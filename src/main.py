@@ -1,11 +1,11 @@
 import uvicorn
 import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from src.endpoints import reply
+from src.endpoints import request_item
 from src.utils.common_logger import logger
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Create API Application
 app = FastAPI()
@@ -19,7 +19,7 @@ async def validation_exception_handler(request, err):
     return JSONResponse(status_code=400, content={"message": f"{base_error_message}", "detail": f"{err}"})
 
 # Add endpoints
-app.include_router(reply.router)
+app.include_router(request_item.router)
 
 app.add_middleware(
     CORSMiddleware,

@@ -1,22 +1,8 @@
-import spacy
-spacy_engine = spacy.load('en_core_web_sm')
 from src.data_layer.bot_io import UserInput
-from src.utils.custom_entities import subjects, bot_item_response_default
+from src.logic_layer.request_item import spacy_engine, filter_noun
+from src.utils.custom_entities import bot_item_response_default
 from fastapi import APIRouter
 router = APIRouter()
-
-
-def filter_noun(input_spacy_doc):
-    """
-    Take spacy doc, returns list of nouns
-    :param input_spacy_doc: Spacy doc
-    :return: List of nouns
-    """
-    noun_list = []
-    for noun in input_spacy_doc.noun_chunks:
-        if noun.text.lower() not in subjects:
-            noun_list.append(noun.text)
-    return noun_list
 
 
 @router.post("/request_item")
