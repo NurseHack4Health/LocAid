@@ -13,4 +13,3 @@ def search_hospitals_with_requested_items(request_input: RequestInput, db: Sessi
     Receive item request, return the top 3 nearest hospitals which satisfies the condition
     """
     return search_hospitals(request_input, db)
-

@@ -3,7 +3,7 @@ import ssl
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from src.endpoints import request_item, hospital, item, search_hospitals
+from src.endpoints import request_item, hospital, item, search_hospitals, order, user
 from src.utils.common_logger import logger
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -23,6 +23,8 @@ app.include_router(request_item.router)
 app.include_router(hospital.router)
 app.include_router(item.router)
 app.include_router(search_hospitals.router)
+app.include_router(order.router)
+app.include_router(user.router)
 
 app.add_middleware(
     CORSMiddleware,

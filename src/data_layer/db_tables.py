@@ -80,8 +80,11 @@ class Order(BaseTable):
         default=uuid.uuid4
     )
     user_id = Column(UUID, ForeignKey("locaid.user.id", name="FK_order_user_id_user_id"))
-    hospital_id = Column(UUID, ForeignKey("locaid.hospital.id", name="FK_order_hospital_id_hospital_id"))
+    from_hospital_id = Column(UUID, ForeignKey("locaid.hospital.id", name="FK_order_hospital_id_hospital_id"))
+    to_hospital_id = Column(UUID, ForeignKey("locaid.hospital.id", name="FK_order_hospital_id_hospital_id"))
     item_id = Column(UUID, ForeignKey("locaid.item.id", name="FK_order_item_id_item_id"))
+    approved = Column(Boolean)
+    processed = Column(Boolean)
     emergency = Column(Boolean)
     created_at = Column(DateTime, default=func.now())
     PrimaryKeyConstraint(id, name="PK_order_id")

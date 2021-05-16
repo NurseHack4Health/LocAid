@@ -38,9 +38,7 @@ class DBInitializer:
             schema_name = os.environ.get('SCHEMA_NAME')
             if not schema_name:
                 raise Exception(f"schema name not given")
-            # if schema_name in self.engine.dialect.get_schema_names(self.engine):
-            #     logger.info("Schema already exists. Skipping")
-                # Create schema
+            # Create schema
             self.engine.execute(CreateSchema(schema_name))
         except Exception as err:
             logger.info(f"Failed to create database: {err}")

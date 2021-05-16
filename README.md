@@ -26,4 +26,9 @@ User Story B: User can request the lacking resources sorted by nearest distance 
 # How to run the application
 `docker build . -t locaid_bot `   
 `docker run -d --name locaid -p 5000:5000 -t locaid_bot`
-# Find Swagger for API
+
+# Find API contract on Swagger
+![alt text](docs/swagger.png "swagger")
+
+# Database diagram
+![alt text](docs/database_diagram.png "db_diagram")

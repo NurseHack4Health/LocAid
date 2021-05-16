@@ -24,7 +24,7 @@ def get_one_hospital_by_id(hospital_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("/hospital")
-def post_one_organization(hospital: HospitalCreate, db: Session = Depends(get_db)):
+def post_one_hospital(hospital: HospitalCreate, db: Session = Depends(get_db)):
     """
     POST one hospital
     It reads parameters from the request field and add missing fields from default values defined in the model

@@ -11,7 +11,8 @@ class UserInput(BaseModel):
 
 
 class ItemRequest(BaseModel):
-    name: str
+    id: Optional[str]
+    name: Optional[str]
     quantity: int
 
 
@@ -23,3 +24,15 @@ class RequestInput(BaseModel):
     items: List[ItemRequest]
 
 
+class OrderInput(BaseModel):
+    """
+    User's order
+    """
+    id: str
+    user_id: str
+    from_hospital_id: Optional[str]
+    to_hospital_id: str
+    items: List[ItemRequest]
+    emergency: Optional[bool]
+    approved: Optional[bool]
+    processed: Optional[bool]
