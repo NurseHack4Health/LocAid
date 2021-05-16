@@ -17,7 +17,9 @@ User Story B: User can request the lacking resources sorted by nearest distance 
 │   ├── schemas
 │   └── utils
 ├── tests (WIP)
-├── main.py
+├── Dockerfile
+├── LICENSE
+├── README.md
 └── requirements.txt
 ```
 
