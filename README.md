@@ -32,3 +32,6 @@ User Story B: User can request the lacking resources sorted by nearest distance 
 
 # Database diagram
 ![alt text](docs/database_diagram.png "db_diagram")
+
+# Running API
+Go to `http://52.247.127.81:5000/docs` to see Swagger document
