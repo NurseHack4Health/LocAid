@@ -5,6 +5,7 @@ An innovative app to facilitate equipment and supply sharing between hospitals, 
 LocAid is an application that helps hospitals to request the resources in need in realtime.
 User Story A: User can register their hospitals with available resources
 User Story B: User can request the lacking resources sorted by nearest distance to their hospitals
+
 # Folder structure
 ```bash
 ├── .env
